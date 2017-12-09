@@ -10,41 +10,36 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.gymnasion.cashgroupatms.AtmViewHolder;
 
-public class AtmAdapter extends RecyclerView.Adapter<AtmAdapter.ViewHolder> {
+public class AtmAdapter extends RecyclerView.Adapter<AtmViewHolder> {
 
     private List<String> atmsList;
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.bank_name) TextView bankName;
-        @BindView(R.id.distance) TextView distance;
-        @BindView(R.id.address_first_line) TextView addressFirstLine;
-        @BindView(R.id.address_second_line) TextView addressSecondLine;
 
-        public ViewHolder(View view) {
-            super(view);
-            ButterKnife.bind(this, view);
-        }
-    }
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public AtmAdapter(List<String> atmsData) {
-        atmsList = atmsData;
+        setAtmsList(atmsData);
+    }
+
+    public void setAtmsList(List<String> atmsData) {
+        this.atmsList = atmsData;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public AtmAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AtmViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.recycler_view_item, parent, false);
-        return new ViewHolder(itemView);
+        return new AtmViewHolder(itemView);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     // With dummy data for now
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(AtmViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         String name = atmsList.get(position);

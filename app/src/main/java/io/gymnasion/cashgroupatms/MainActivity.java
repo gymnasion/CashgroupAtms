@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.toolbar) Toolbar appToolbar;
 
     @BindView(R.id.list) RecyclerView recyclerViewList;
-    private RecyclerView.Adapter adapter;
+    private AtmAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(appToolbar);
 
         recyclerViewList.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
         recyclerViewList.setLayoutManager(layoutManager);
 
         // Dummy data for adapter
