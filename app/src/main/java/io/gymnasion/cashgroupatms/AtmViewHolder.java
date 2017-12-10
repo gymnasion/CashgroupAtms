@@ -7,9 +7,9 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AtmViewHolder extends RecyclerView.ViewHolder{
-    @BindView(R.id.bank_name)
-    TextView bankName;
+public class AtmViewHolder extends RecyclerView.ViewHolder {
+
+    @BindView(R.id.bank_name) TextView bankName;
     @BindView(R.id.distance) TextView distance;
     @BindView(R.id.address_first_line) TextView addressFirstLine;
     @BindView(R.id.address_second_line) TextView addressSecondLine;
