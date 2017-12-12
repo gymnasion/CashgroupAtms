@@ -1,16 +1,29 @@
-package io.gymnasion.cashgroupatms;
+package io.gymnasion.cashgroupatms.data;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Atm {
 
-    private String name, city, street, zip;
-    private double lat, lng;
-
-    public Atm(String name, String city, String street, String zip, double lat, double lng) {
-        this.name = name;
-        this.city = city;
-        this.street = street;
-        this.zip = zip;
-        this.lat = lat;
-        this.lng = lng;
-    }
+    @SerializedName("id")
+    @Expose
+    public Integer id;
+    @SerializedName("bank")
+    @Expose
+    public Bank bank;
+    @SerializedName("city")
+    @Expose
+    public City city;
+    @SerializedName("street")
+    @Expose
+    public String street;
+    @SerializedName("zip")
+    @Expose
+    public String zip;
+    @SerializedName("latitude")
+    @Expose
+    public Double latitude;
+    @SerializedName("longitude")
+    @Expose
+    public Double longitude;
 }
