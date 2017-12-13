@@ -28,12 +28,7 @@ public class AtmAdapter extends RecyclerView.Adapter<AtmViewHolder> {
     @Override
     public void onBindViewHolder(AtmViewHolder holder, int position) {
         Atm atm = itemsList.get(position);
-
-        holder.bankName.setText(atm.bank.name);
-        holder.distance.setText("400km");
-        holder.addressFirstLine.setText(atm.street);
-        String addressSecondLine = atm.zip + " " + atm.city.name;
-        holder.addressSecondLine.setText(addressSecondLine);
+        holder.bind(atm);
     }
 
     @Override

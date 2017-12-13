@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.gymnasion.cashgroupatms.data.Atm;
 
 public class AtmViewHolder extends RecyclerView.ViewHolder {
 
@@ -19,5 +20,11 @@ public class AtmViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, view);
     }
 
-
+    public void bind(Atm atm) {
+        bankName.setText(atm.bank.name);
+        distance.setText("400km");
+        addressFirstLine.setText(atm.street);
+        String secondLine = atm.zip + " " + atm.city.name;
+        addressSecondLine.setText(secondLine);
+    }
 }
