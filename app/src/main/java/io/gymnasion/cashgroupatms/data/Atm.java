@@ -26,4 +26,14 @@ public class Atm {
     @SerializedName("longitude")
     @Expose
     public Double longitude;
+
+    public Atm(Integer id, Bank bank, City city, String street, String zip, Double latitude, Double longitude){
+        this.id = id;
+        this.bank = bank;
+        this.city = city;
+        this.street = street;
+        this.zip = zip;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 }

@@ -12,4 +12,8 @@ public class Bank {
     @Expose
     public String name;
 
+    public Bank(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }
