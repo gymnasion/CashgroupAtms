@@ -7,11 +7,13 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import io.gymnasion.cashgroupatms.data.Atm;
+
 public class AtmAdapter extends RecyclerView.Adapter<AtmViewHolder> {
 
-    private List<String> itemsList;
+    private List<Atm> itemsList;
 
-    public void setItemsList(List<String> atmsData) {
+    public void setItemsList(List<Atm> atmsData) {
         this.itemsList = atmsData;
         notifyDataSetChanged();
     }
@@ -25,12 +27,13 @@ public class AtmAdapter extends RecyclerView.Adapter<AtmViewHolder> {
 
     @Override
     public void onBindViewHolder(AtmViewHolder holder, int position) {
-        String name = itemsList.get(position);
+        Atm atm = itemsList.get(position);
 
-        holder.bankName.setText("Bank name" + name);
+        holder.bankName.setText(atm.bank.name);
         holder.distance.setText("400km");
-        holder.addressFirstLine.setText("Random Street 23");
-        holder.addressSecondLine.setText("10395, Berlin");
+        holder.addressFirstLine.setText(atm.street);
+        String addressSecondLine = atm.zip + " " + atm.city.name;
+        holder.addressSecondLine.setText(addressSecondLine);
     }
 
     @Override

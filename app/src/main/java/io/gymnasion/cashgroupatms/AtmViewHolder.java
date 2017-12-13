@@ -18,4 +18,6 @@ public class AtmViewHolder extends RecyclerView.ViewHolder {
         super(view);
         ButterKnife.bind(this, view);
     }
+
+
 }
